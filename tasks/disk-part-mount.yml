@@ -8,11 +8,11 @@
 
 - name: disk | part | Mount partition
   mount:
-    name: "{{ part.mount }}"
+    src: "UUID={{ part_blkid.stdout }}"
+    path: "{{ part.mount }}"
     fstype: "{{ part.fstype }}"
     opts: "{{ part.mount_options | d(omit) }}"
     passno: '0'
-    src: "UUID={{ part_blkid.stdout }}"
     state: "{{ part.mount_state | d('mounted') }}"
   become: true
 

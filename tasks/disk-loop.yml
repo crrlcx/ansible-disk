@@ -60,11 +60,11 @@
 
 - name: disk | Mount additional disk
   mount:
-    name: "{{ item.mount }}"
+    src: "UUID={{ disk_blkid.stdout }}"
+    path: "{{ item.mount }}"
     fstype: "{{ item.fstype }}"
     opts: "{{ item.mount_options | d(omit) }}"
     passno: '0'
-    src: "UUID={{ disk_blkid.stdout }}"
     state: "{{ item.mount_state | d('mounted') }}"
   become: true
   when:
