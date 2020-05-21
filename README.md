@@ -49,20 +49,22 @@ disk_additional_disks:
 - `parts` is the list of disk partitions (optional).
   - `name` is the partition name (optional).
   - `fstype` is the file system type for the partition.
-  - `fsopts` is the file system option for the partition.
+  - `fsopts` is the file system option for the partition (optional).
   - `mount` is the mount point for the partition.
   - `mount_options` lets you specify custom mount options for your partition.
   - `user` defines an owner of the mount directory (default: `root`).
   - `group` defines a group of the mount directory (default: `root`).
-  - `disable_periodic_fsck` ...
+  - `mode` defines a mode of the mount directory (default: `0755`).
+  - `disable_periodic_fsck` disables periodic checking of the file system (enabled by default for ext3/4)
 - `fstype`is the file system type for the disk.
 - `mount_options` lets you specify custom mount options for your new disk.
 - `mount` is the mount point for the disk.
 - `user` defines an owner of the mount directory (default: `root`).
 - `group` defines a group of the mount directory (default: `root`).
-- `disable_periodic_fsck` disables periodic checking of the ext3/4 file system on a new disk.
+- `mode` defines a mode of the mount directory (default: `0755`).
+- `disable_periodic_fsck` disables periodic checking of file system (enabled by default for ext3/4).
 
-Translated with www.DeepL.com/Translator (free version)
+ℹ Translated with www.DeepL.com/Translator (free version)
 
 The following filesystems are currently supported:
 
